@@ -3,7 +3,6 @@ export const validation = {
   nameCheck: (value) => {
     //
     const regexp = /([^가-힣\x20])/i;
-    console.log(value, value.length);
     if (value.length < 2 || value.length > 10) {
       return true;
     }

@@ -20,9 +20,7 @@ const isModifierKey = e => {
 
 const formatToRegister = e => {
   //
-  console.log('>>>')
   if(isModifierKey(e)) {
-    console.log('keyDown',e.key, e.target.value);
     return;
   }
 
@@ -31,7 +29,6 @@ const formatToRegister = e => {
   const birthday = input.substring(0,6);
   const sex = input.substring(6,7);
 
-  console.log(input.length);
   if(input.length > 5){target.value = `${birthday} - ${sex}`;}
   else if(input.length > 0){target.value = `${birthday}`;}
 };

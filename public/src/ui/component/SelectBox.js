@@ -17,7 +17,6 @@ function SelectBox(key, identityService, nextFocusTarget) {
     const option = document.createElement('option');
     option.value = carrier.code;
     option.text = carrier.description;
-
     selectBox.appendChild(option);
   });
 
