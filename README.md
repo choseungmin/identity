@@ -1,5 +1,5 @@
-![screenshot](./public/assets/screenshot.png)
-![screenshot2](./public/assets/screenshot2.png)
+![screenshot](assets/screenshot.png)
+![screenshot2](assets/screenshot2.png)
 
 # 실행 - 개발시 npm 대신 yarn을 사용하였습니다.
 1. yarn 
@@ -51,3 +51,10 @@
     - SubmitButton.js 
         i. line: 12 -> 부적합한 값 출력 log
         ii. line: 15 -> 빈값 안내 alert
+        
+        
+        
+        
+        
+        
+https://github.com/choseungmin/identity-kakaopay

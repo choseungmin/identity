@@ -3,10 +3,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: './public/index.js',
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'public'),
   },
   module: {
     rules: [{

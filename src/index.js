@@ -1,11 +1,11 @@
 import './style.css';
-import IdentityService from './src/service/IdentityService';
-import Input from './src/ui/component/Input';
-import SelectBox from "./src/ui/component/SelectBox";
-import SubmitButton from "./src/ui/component/SubmitButton";
-import TermsCheckBox from "./src/ui/ui/TermsCheckBox";
-import IdentityModel from "./src/model/IdentityModel";
-import GuideMessage from "./src/ui/component/GuideMessage";
+import IdentityService from './service/IdentityService';
+import Input from './ui/component/Input';
+import SelectBox from "./ui/component/SelectBox";
+import SubmitButton from "./ui/component/SubmitButton";
+import TermsCheckBox from "./ui/ui/TermsCheckBox";
+import IdentityModel from "./model/IdentityModel";
+import GuideMessage from "./ui/component/GuideMessage";
 
 
 const app = () => {
