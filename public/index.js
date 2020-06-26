@@ -5,6 +5,7 @@ import SelectBox from "./src/ui/component/SelectBox";
 import SubmitButton from "./src/ui/component/SubmitButton";
 import TermsCheckBox from "./src/ui/ui/TermsCheckBox";
 import IdentityModel from "./src/model/IdentityModel";
+import GuideMessage from "./src/ui/component/GuideMessage";
 
 
 const app = () => {
@@ -18,6 +19,7 @@ const app = () => {
   const registerNumber = new Input('registerNumber', identityService, 10, 'name');
   const nameInput = new Input('name', identityService, 10);
   const sendSmsButton = new SubmitButton(identityService, identityModel);
+  const guideMessage = new GuideMessage();
 
   const checkBoxTerm = new TermsCheckBox(identityService);
 
@@ -27,6 +29,7 @@ const app = () => {
   div.appendChild(phoneNumber);
   div.appendChild(registerNumber);
   div.appendChild(nameInput);
+  div.appendChild(guideMessage);
   div.appendChild(checkBoxTerm);
 
   div.appendChild(sendSmsButton);

@@ -8,10 +8,8 @@ function SubmitButton(identityService, identityModel) {
   input.onclick = e => {
 
     const blankValue = identityModel.isBlank(identityService.getIdentity());
-    // console.log('빈값: ' blankValue);
-
     const result = identityModel.isIncorrect(identityService.getIdentity());
-    console.log('부적한 값들: ', result)
+    // console.log('부적한 값들: ', result);
 
     if (blankValue) {
       // alert(identityKey[blankValue] + ' 은(는) 필수값입니다.');

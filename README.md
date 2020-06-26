@@ -26,3 +26,8 @@
         iii. 10글지 이하
     - 약관
         i. 필수 약관
+        
+4. 주석 처리된 안내 log 및 alert
+    - SubmitButton.js 
+        i. line: 12 -> 부적합한 값 출력 log
+        ii. line: 15 -> 빈값 안내 alert
