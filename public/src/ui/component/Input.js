@@ -56,7 +56,6 @@ function Input(key, identityService, maxLength, nextFocusTarget) {
   input.addEventListener('keyup', e => {
     //
     identityService.setIdentityProps(key, e.target.value);
-
     const length = e.target.value.replace(/ /g,"").replace(/-/g,"").length;
 
     if (e.key === 'Tab' || e.key === 'Shift' || e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
@@ -65,6 +64,9 @@ function Input(key, identityService, maxLength, nextFocusTarget) {
     }
 
     if (key === 'phoneNumber') {
+      const { value } = e.target;
+      input.value = value.slice(0, value.length-1) + value.slice(-1).replace(/[^0-9]/g,"");
+
       if (length === 11) {
         const result = validation.phoneCheck(e.target.value);
 
@@ -80,11 +82,14 @@ function Input(key, identityService, maxLength, nextFocusTarget) {
       }
 
     } else if (key === 'registerNumber') {
+      const { value } = e.target;
+      input.value = value.slice(0, value.length-1) + value.slice(-1).replace(/[^0-9]/g,"");
+
       if (length === 7) {
         document.getElementById(nextFocusTarget).focus();
 
       } else if (e.key == 'Backspace' ) {
-        input.value = e.target.value.replace(/ /g,"").replace(/-/g,"");
+        input.value = e.target.value.replace(/[^0-9]/g,"");
       }
     }
   });
