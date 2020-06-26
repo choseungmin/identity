@@ -27,7 +27,7 @@ class IdentityService {
   setIdentityProps(key, value) {
     //
     if (typeof value === 'string') {
-      value = value.replace(/ /g,"");
+      value = value.replace(/ /g,"").replace(/-/g,"");
 
     }
     this.identity = {
