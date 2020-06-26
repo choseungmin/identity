@@ -1,19 +1,18 @@
 import './style.css';
 import IdentityService from './src/service/IdentityService';
 import termsCodeModel from './src/model/termsCodeModel';
-import { validation } from './src/util/validation';
 import Input from './src/ui/component/Input';
 import SelectBox from "./src/ui/component/SelectBox";
+import Button from "./src/ui/component/Button";
+import {termsList} from "./src/model/termsList";
+import CheckBox from "./src/ui/component/CheckBox";
+import TermsCheckBox from "./src/ui/ui/TermsCheckBox";
 
 
 
 const identityService = new IdentityService();
-
 const div = document.querySelector('.container');
-div.innerHTML = 'Webpack Loaded !!';
-
 const termsCode = new termsCodeModel({title: 'title', title2: 'title2'});
-
 
 
 const app = () => {
@@ -27,24 +26,28 @@ const app = () => {
 
 
 
-
-
-
-  console.log(identityService.identity);
-
   const carrierCode = new SelectBox('carrierCode', identityService);
   const phoneNumber = new Input('phoneNumber', identityService);
   const registerNumber = new Input('registerNumber', identityService);
   const nameInput = new Input('name', identityService);
+  const sendSmsButton = new Button(identityService);
 
 
-  const sendSmsButton = document.createElement('input');
-  sendSmsButton.type = 'button';
-  sendSmsButton.className = 'send-btn';
-  sendSmsButton.value = '인증번호 요청';
-  sendSmsButton.onclick = (e) => {
-    console.log(identityService.getIdentity());
-  };
+
+
+  // const checkBox = document.createElement('div');
+  // const input = document.createElement('input');
+  // const label = document.createElement('label');
+  // input.type = 'checkbox';
+  // label.htmlFor = input;
+  // label.innerText = termsList[0].title;
+  //
+  // checkBox.appendChild(input);
+  // checkBox.appendChild(label);
+
+  const checkBoxTerm = new TermsCheckBox(identityService);
+
+
 
 
   /** render */
@@ -52,6 +55,8 @@ const app = () => {
   div.appendChild(phoneNumber);
   div.appendChild(registerNumber);
   div.appendChild(nameInput);
+  div.appendChild(checkBoxTerm);
+
   div.appendChild(sendSmsButton);
 };
 

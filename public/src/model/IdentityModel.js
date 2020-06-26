@@ -4,6 +4,12 @@ class IdentityModel {
   //
   constructor(identity) {
     //
+    this.name = null;
+    this.registerNumber = null;
+    this.carrierCode = null;
+    this.phoneNumber = null;
+    this.termsCode = [];
+
     if(identity) {
       if (identity.name) this.name = identity.name;
       if (identity.registerNumber) this.registerNumber = identity.registerNumber;

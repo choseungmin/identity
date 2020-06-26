@@ -1,5 +1,4 @@
 import {validation} from '../../util/validation';
-import IdentityService from '../../service/IdentityService';
 import {identityKey} from "../../model/identityKey";
 
 // const identityService = new IdentityService();

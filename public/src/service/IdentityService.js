@@ -12,6 +12,24 @@ class IdentityService {
   //
   // }
 
+  setIdentityTerms(key) {
+    if (!this.identity) {
+      //
+      this.setIdentityProps('termsCode', [key]);
+    } else if (this.identity.termsCode.includes(key)) {
+      //
+      const terms = this.identity.termsCode.filter(terms => terms !== key);
+      console.log(terms);
+      this.setIdentityProps('termsCode', [...terms]);
+    } else {
+      //
+      this.setIdentityProps('termsCode', [
+        ...this.identity.termsCode,
+        key,
+      ])
+    }
+  }
+
   setIdentityProps(key, value) {
     this.identity = {
       ...this.identity,
