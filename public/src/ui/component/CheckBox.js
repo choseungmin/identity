@@ -1,6 +1,6 @@
 import {termsList} from "../../model/termsList";
 
-function CheckBox(identityService, term) {
+function CheckBox(identityService, term, checkBoxAll) {
   //
   const checkDiv = document.createElement('div');
   const input = document.createElement('input');
@@ -9,6 +9,7 @@ function CheckBox(identityService, term) {
   input.id = 'term_'+term.termsId;
   input.type = 'checkbox';
   input.checked = identityService.getIdentity().termsCode[term.termsId];
+  input.value = term.termsId;
 
   checkDiv.className = 'terms-div';
   input.className = 'checkbox-div';
@@ -18,10 +19,14 @@ function CheckBox(identityService, term) {
   label.innerText = term.title;
 
   input.onclick = e => {
-    console.log(e);
-    console.log(identityService.getIdentity().termsCode);
-    // identityService.setIdentityProps('termsCode', [...identityService.getIdentity().termsCode, term.termsId]);
     identityService.setIdentityTerms(term.termsId);
+    const input = checkBoxAll.querySelector('input');
+    if (identityService.getIdentity().termsCode.length === 4) {
+      input.checked = true;
+    } else {
+      input.checked = false;
+    }
+
   };
 
 

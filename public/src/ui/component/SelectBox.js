@@ -3,7 +3,7 @@ import IdentityService from '../../service/IdentityService';
 import {identityKey} from "../../model/identityKey";
 import {carrierList} from "../../model/carrierList";
 
-function SelectBox(key, identityService) {
+function SelectBox(key, identityService, nextFocusTarget) {
   const options = [1,2,3,4];
   const div = document.createElement('div');
   const spanDiv = document.createElement('div');
@@ -22,10 +22,12 @@ function SelectBox(key, identityService) {
     selectBox.appendChild(option);
   });
 
+  identityService.setIdentityProps('carrierCode', carrierList[0].code);
+
   /** onchange */
   selectBox.onchange = e => {
-    identityService.setIdentityProps('carrier', e.target.value);
-    console.log(e.target.value);
+    identityService.setIdentityProps('carrierCode', e.target.value);
+    document.getElementById(nextFocusTarget).focus();
   };
 
   span.innerHTML = identityKey[key];

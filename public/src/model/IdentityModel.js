@@ -21,10 +21,10 @@ class IdentityModel {
 
   isBlank(identity) {
     //
-    if (!identity.name) return 'name';
-    if (!identity.registerNumber) return 'registerNumber';
     if (!identity.carrierCode) return 'carrierCode';
     if (!identity.phoneNumber) return 'phoneNumber';
+    if (!identity.registerNumber) return 'registerNumber';
+    if (!identity.name) return 'name';
     if (!identity.termsCode) return 'termsCode';
   }
 

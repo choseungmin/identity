@@ -19,7 +19,6 @@ class IdentityService {
     } else if (this.identity.termsCode.includes(key)) {
       //
       const terms = this.identity.termsCode.filter(terms => terms !== key);
-      console.log(terms);
       this.setIdentityProps('termsCode', [...terms]);
     } else {
       //
@@ -31,6 +30,10 @@ class IdentityService {
   }
 
   setIdentityProps(key, value) {
+    //
+    if (typeof value === 'string') {
+      value = value.replace(/ /g,"");
+    }
     this.identity = {
       ...this.identity,
       [key]: value,
