@@ -1,5 +1,3 @@
-import {termsList} from "../../model/termsList";
-
 function CheckBox(identityService, term, checkBoxAll) {
   //
   const checkDiv = document.createElement('div');
@@ -19,21 +17,22 @@ function CheckBox(identityService, term, checkBoxAll) {
   label.innerText = term.title;
 
   input.onclick = e => {
+    //
     identityService.setIdentityTerms(term.termsId);
     const input = checkBoxAll.querySelector('input');
+
     if (identityService.getIdentity().termsCode.length === 4) {
       input.checked = true;
+
     } else {
       input.checked = false;
-    }
 
+    }
   };
 
-
-
+  /** render */
   checkDiv.appendChild(input);
   checkDiv.appendChild(label);
-
 
   return checkDiv;
 }

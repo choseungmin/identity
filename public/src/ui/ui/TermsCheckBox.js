@@ -1,5 +1,5 @@
 import CheckBox from "../component/CheckBox";
-import {termsList} from "../../model/termsList";
+import { termsList } from "../../model/termsList";
 import CheckboxAll from "../component/CheckBoxAll";
 
 function TermsCheckBox(identityService) {
@@ -15,11 +15,8 @@ function TermsCheckBox(identityService) {
     termsDiv.appendChild(checkBox);
   });
 
-
-
   termsDiv.appendChild(checkBoxAll);
   return termsDiv;
-
 }
 
 export default TermsCheckBox;

@@ -1,30 +1,37 @@
-const isNumericInput = (event) => {
-  const key = event.keyCode;
-  return ((key >= 48 && key <= 57) || // Allow number line
-    (key >= 96 && key <= 105) // Allow number pad
+const isNumericInput = e => {
+  //
+  const key = e.keyCode;
+  return ((key >= 48 && key <= 57) || (key >= 96 && key <= 105) // Allow number line || Allow number pad
   );
 };
 
-const isModifierKey = (event) => {
-  const key = event.keyCode;
-  return (event.shiftKey === true || key === 35 || key === 36) || // Allow Shift, Home, End
+const isModifierKey = e => {
+  //
+  const key = e.keyCode;
+  return (e.shiftKey === true || key === 35 || key === 36) ||
     (key === 8 || key === 9 || key === 13 || key === 46) || // Allow Backspace, Tab, Enter, Delete
     (key > 36 && key < 41) || // Allow left, up, right, down
     (
       // Allow Ctrl/Command + A,C,V,X,Z
-      (event.ctrlKey === true || event.metaKey === true) &&
+      (e.ctrlKey === true || e.metaKey === true) &&
       (key === 65 || key === 67 || key === 86 || key === 88 || key === 90)
     )
 };
 
-const formatToRegister = (event) => {
-  if(isModifierKey(event)) {return;}
+const formatToRegister = e => {
+  //
+  console.log('>>>')
+  if(isModifierKey(e)) {
+    console.log('keyDown',e.key, e.target.value);
+    return;
+  }
 
-  const target = event.target;
+  const target = e.target;
   const input = target.value.replace(/\D/g,'');
   const birthday = input.substring(0,6);
   const sex = input.substring(6,7);
 
+  console.log(input.length);
   if(input.length > 5){target.value = `${birthday} - ${sex}`;}
   else if(input.length > 0){target.value = `${birthday}`;}
 };

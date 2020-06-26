@@ -1,5 +1,4 @@
-import {termsList} from "../../model/termsList";
-import CheckBox from "./CheckBox";
+import { termsList } from "../../model/termsList";
 
 function CheckboxAll(identityService, checkboxList) {
   //
@@ -20,32 +19,35 @@ function CheckboxAll(identityService, checkboxList) {
   input.onclick = e => {
     //
     const { identity } = identityService;
+
     if (identity && identity.termsCode.length === termsList.length) {
       identityService.setIdentityProps('termsCode', []);
-      checkboxList.map((div, index) => {
+      checkboxList.map(div => {
         const checkbox = div.querySelector('input');
         checkbox.checked = false;
         input.checked = false;
       })
+
     } else {
-      identityService.setIdentityProps('termsCode', checkboxList.map((div, index) => {
+      identityService.setIdentityProps('termsCode', checkboxList.map(div => {
         const checkBox = div.querySelector('input');
         return checkBox.value;
       }));
-      checkboxList.map((div, index) => {
+
+      checkboxList.map(div => {
         const checkbox = div.querySelector('input');
         checkbox.checked = true;
         input.checked = true;
       })
-    }
 
+    }
   };
 
+  /** render */
   checkDiv.appendChild(input);
   checkDiv.appendChild(label);
 
   return checkDiv;
-
 }
 
 export default CheckboxAll;
