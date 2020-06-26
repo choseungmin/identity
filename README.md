@@ -1,12 +1,15 @@
 ![screenshot](./public/assets/screenshot.png)
 ![screenshot2](./public/assets/screenshot2.png)
 
-# 실행 
-    - 개발시 npm 대신 yarn을 사용하였습니다.
-1. init: yarn install
-2. 실행: yarn start
-3. 빌드: yarn build
-
+# 실행 - 개발시 npm 대신 yarn을 사용하였습니다.
+1. yarn 
+    yarn install
+    yarn start
+    yarn build
+2. npm
+    npm install
+    npm start
+    npm npm run-script build
 
 # 해결 젼략
 
