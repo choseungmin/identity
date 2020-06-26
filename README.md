@@ -47,10 +47,11 @@
     - list형 데이터의 값이 변형되지 않도록 Object.freeze() 사용
         ex) [통신사 목록(carrierList.js), 약관 목록(termsList.js), 인증목록(identityKey.js)] 
         
-5. 주석 처리된 안내 log 및 alert
+5. 로그 및 알림 (입력 값 확인)
+    - 각 단위별 부적합 체크는 콘솔로 처리하였습니다.
     - SubmitButton.js 
         i. line: 12 -> 부적합한 값 출력 log
-        ii. line: 15 -> 빈값 안내 alert
+        ii. line: 15 -> 비어있는 값 안내 alert (현재 주석처리)
         
         
         
