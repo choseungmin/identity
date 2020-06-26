@@ -17,10 +17,14 @@ const formatToPhone = e => {
   const target = e.target;
   const input = target.value.replace(/\D/g,'');
   const zip = input.substring(0,3);
-  const middle = input.substring(3,7);
-  const last = input.substring(7,11);
+  const middle = input.substring(3,6);
+  const last = input.substring(6,10);
 
-  if(input.length > 6){target.value = `${zip} ${middle} ${last}`;}
+  const middle2 = input.substring(3,7);
+  const last2 = input.substring(7,11);
+
+  if(input.length > 9){target.value = `${zip} ${middle2} ${last2}`;}
+  else if(input.length > 5){target.value = `${zip} ${middle} ${last}`;}
   else if(input.length > 3){target.value = `${zip} ${middle}`;}
   else if(input.length > 0){target.value = `${zip}`;}
 };

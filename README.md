@@ -1,4 +1,5 @@
 ![screenshot](./public/assets/screenshot.png)
+![screenshot2](./public/assets/screenshot2.png)
 
 # 실행 
     - 개발시 npm 대신 yarn을 사용하였습니다.
@@ -17,7 +18,7 @@
     - 반복되는 코드의 최소화
     
 2. 입력정보(인증정보)를 class로 선언 : ( IdentityModel )
-    - 원하는 정보(변수)만 전달하도록 설
+    - 원하는 정보(변수)만 전달하도록 구현
     - static 한 값으로 선언하여 각자의 컴포넌트에서도 같은 객체를을 수정하도록 구현
     - 같은 객채를 다루는 함수를 한곳에 집중
         i. 인증정보의 빈값, 무효값 확인 하는 로직을 같은 곳에 구현
